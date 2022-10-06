@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <meta name="theme-color" content="#660e12">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandhelFriendly" content="true">
+  <meta name="apple-mobile-web-appcapable" content="yes">
+  <meta name="apple-mobile-web-status-bar-style" content="black-translucent">
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/favicon.png">
+  <link rel="apple-touch-startup-image" href="./assets/favicon.png">
+  <link rel="manifest" href="./manifest.json">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1>To-Do List</h1>
+  </header>
+  <main>
+    <section class="tasker">
+      <article class="section">
+        <h2 class="task-title section-title">Add task</h2>
+        <form class="task-form">
+          <input class="input-form" type="text" id="task" name="task" placeholder="Task name" required
+            autocomplete="off">
+          <input class="input-time" type="datetime-local" name="time" id="time">
+          <input class="button-form" type="submit" value="Add">
+          <input type="hidden" name="id">
+        </form>
+      </article>
+      <article class="section">
+        <h2 class="section-title">Tareas</h2>
+        <table class="task-table">
+          <thead>
+            <tr>
+              <!-- <th></th> -->
+              <th>Tasks</th>
+              <th>Reminder</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </article>
+    </section>
+  </main>
+
+  <template id="task-template">
+    <tr class="table-row">
+      <td class="task-name"></td>
+      <td class="task-reminder"></td>
+      <td>
+        <button class="edit button" id="edit"><img class="edit" src="./assets/edit.svg" alt="edit"></button>
+        <button class="delete button"><img src="./assets/delete.svg" alt="delete"></button>
+      </td>
+    </tr>
+  </template>
+
+  <footer class="foot">
+    <small>Designed by <b><a href="https://twitter.com/eduardojose03" rel="noopener" target="_blank">Eduardo
+          ✌🏼</a></b></small>
+  </footer>
+
+  <button class="dark-theme-btn">
+    <span class="material-symbols-outlined">
+      light_mode
+    </span>
+  </button>
+
+  <script src="./js/script.js" type="module"></script>
+</body>
+
+
+
+</html>

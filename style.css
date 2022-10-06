@@ -1,0 +1,357 @@
+/********************  Custom Properties  *******************/
+:root {
+  --main-color: #d51d25;
+  --main-dark-color: #660e12;
+  --main-alpha-color: rgba(213, 29, 37, 0.95);
+  --second-color: #f6fbff;
+  --second-dark-color: #a7acb0;
+  --third-color: #332f2b;
+  --third-alpha-color: rgba(51, 47, 43, 0.5);
+  --white-color: #fff;
+  --black-color: #000;
+  --title-color: #333;
+  --text-color: #332f2b;
+  --max-width: 1200px;
+  --header-height: 4rem;
+  --font: "Josefin Sans", sans-serif;
+  --dark-bg-color: #1c1b1f;
+  --dark-surface-color: #49454f;
+}
+/***********************  Reset CSS  *************************/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: var(--font);
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--second-color);
+  transition: all 0.1s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--main-dark-color);
+  transition: all 0.3s ease-in-out;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+/**********************  Components  **********************/
+/*************************  Footer  *************************/
+.foot {
+  z-index: -1;
+  margin-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/****************************form***************************/
+.button-form {
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height: 2.5rem;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  border: 0.15rem solid var(--third-color);
+  /* border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem; */
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-form:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* min-width: 9rem; */
+  width: 65%;
+  height: 2.5rem;
+  border: 0.15rem solid var(--third-color);
+  /* border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem; */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.input-time {
+  display: block;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2.5rem;
+  border: 0.15rem solid var(--third-color);
+  border-radius: 0.5rem;
+}
+
+/******************** Dark Theme Btn **********************/
+.dark-theme-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 3vh;
+  right: 1vw;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  transition: all 0.3s ease-out;
+}
+
+.dark-theme-btn:hover {
+  background-color: var(--third-color);
+  color: var(--main-color);
+}
+
+.dark-theme-btn > span {
+  pointer-events: none;
+  margin: 0;
+}
+
+/*************************  Utilities  *************************/
+.dark-theme {
+  background-color: var(--dark-bg-color);
+  color: var(--white-color);
+}
+
+.main-dark-theme {
+  background-color: var(--main-dark-color);
+  color: var(--white-color);
+}
+
+.dark-surface {
+  background-color: var(--dark-surface-color);
+  color: var(--white-color);
+}
+
+.white-text {
+  color: var(--white-color);
+}
+
+.button {
+  width: 5rem;
+  height: 2rem;
+  border: 0.15rem solid var(--second-color);
+  background-color: var(--second-color);
+  border-radius: 0.5rem;
+}
+
+.button:hover {
+  /* background-color: var(--third-alpha-color); */
+  border: 0.15rem solid var(--third-color);
+  color: var(--white-color);
+  fill: var(--white-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.input {
+  border: 0.15rem solid var(--second-color);
+  border-radius: 0.5rem;
+  min-width: 9rem;
+  width: 65%;
+  height: 2.5rem;
+}
+
+.none {
+  display: none;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  /* border-top: thin solid var(--second-color);
+  border-bottom: thin solid var(--second-color); */
+  /* border-radius: 0.5rem; */
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  background-color: var(--first-color);
+  color: var(--text-color);
+}
+
+.dark-section-title {
+  color: var(--white-color);
+}
+
+.table-row {
+  /* border-top: 0.1rem solid var(--dark-surface-color); */
+  color: var(--white-color);
+  margin-bottom: 0.5rem;
+}
+
+/************************ Site Styles  ***********************/
+header {
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: var(--main-color);
+  transition: all 0.1s ease-in-out;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  background-color: var(--main-color);
+  transition: all 0.1s ease-in-out;
+}
+
+td {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding: 0.5rem;
+}
+
+th {
+  padding: 1.5rem;
+}
+
+.delete {
+  width: 2.5rem;
+  height: 2rem;
+}
+
+.delete img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.edit {
+  width: 2.5rem;
+  height: 2rem;
+}
+
+.edit img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.task-form {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task-table {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .button-form {
+    display: inline;
+    margin-left: -0.2rem;
+    width: 5rem;
+    height: 2.5rem;
+    border: 0.15rem solid var(--main-color);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* border-radius: 0.5rem; */
+    transition: all 0.3s ease-in-out;
+  }
+
+  .input-form {
+    display: inline;
+    margin-right: -0.2rem;
+    /* min-width: 9rem; */
+    width: 65%;
+    height: 2.5rem;
+    border: 0.15rem solid var(--main-color);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* border-radius: 0.5rem; */
+  }
+
+  .input-time {
+    display: inline;
+    margin-right: -0.2rem;
+    margin-left: -0.2rem;
+    height: 2.5rem;
+    border: 0.15rem solid var(--main-color);
+    border-radius: 0;
+  }
+}
