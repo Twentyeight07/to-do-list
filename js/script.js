@@ -12,7 +12,6 @@ const d = document;
 d.addEventListener("DOMContentLoaded", (e) => {
   init();
   showTasks();
-  reminder();
 });
 
 d.addEventListener("submit", (e) => {
@@ -39,6 +38,7 @@ d.addEventListener("click", (e) => {
 });
 
 darkTheme();
+reminder();
 
 /**************************** Service Worker ********************************/
 

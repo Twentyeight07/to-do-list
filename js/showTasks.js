@@ -1,8 +1,6 @@
 const d = document,
   db = JSON.parse(localStorage.getItem("myTasks")),
   $table = d.querySelector(".task-table"),
-  $form = d.querySelector(".task-form"),
-  $title = d.querySelector(".task-title"),
   $template = d.getElementById("task-template").content,
   $fragment = d.createDocumentFragment();
 
