@@ -9,9 +9,9 @@ import showTasks from "./showTasks.js";
 
 const d = document;
 
-d.addEventListener("DOMContentLoaded", (e) => {
-  init();
-  showTasks();
+d.addEventListener("DOMContentLoaded", async (e) => {
+  await init();
+  await showTasks();
 });
 
 d.addEventListener("submit", (e) => {
@@ -44,7 +44,7 @@ reminder();
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("../sw.js")
+    .register("https://twentyeight07.github.io/to-do-list/sw.js")
     .then((reg) => console.log("Succesfull SW registration!", reg))
     .catch((err) => console.warn("Registration error:" + err));
 }

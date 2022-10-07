@@ -4,7 +4,7 @@ const d = document,
 let myTasksInit = JSON.parse(ls.getItem("myTasks")) || [];
 let myThemeInit = ls.getItem("myTheme") || "light";
 
-const init = () => {
+const init = async () => {
   const myTasks = () => {
     let setTasks = ls.getItem("myTasks")
       ? JSON.parse(ls.getItem("myTasks"))
