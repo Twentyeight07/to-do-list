@@ -2,15 +2,15 @@
 
 const CACHE_NAME = "v1_cache_todo_list",
   urlsToCache = [
-    "./",
+    "https://twentyeight07.github.io/to-do-list/",
     "https://fonts.googleapis.com",
     "https://fonts.gstatic.com",
     "https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap",
     "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0",
     "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0",
-    "./style.css",
-    "./js/script.js",
-    "./assets/favicon.png",
+    "https://twentyeight07.github.io/to-do-list/style.css",
+    "https://twentyeight07.github.io/to-do-list/js/script.js",
+    "https://twentyeight07.github.io/to-do-list/assets/favicon.png",
   ];
 
 //Durante la fase de instalación, se almacena en caché los archivos estáticos
