@@ -2,12 +2,7 @@
 
 const CACHE_NAME = "v1_cache_todo_list",
   urlsToCache = [
-    "https://twentyeight07.github.io/to-do-list/",
-    "https://fonts.googleapis.com",
-    "https://fonts.gstatic.com",
-    "https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap",
-    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0",
-    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0",
+    "https://twentyeight07.github.io/to-do-list/index.html",
     "https://twentyeight07.github.io/to-do-list/style.css",
     "https://twentyeight07.github.io/to-do-list/js/script.js",
     "https://twentyeight07.github.io/to-do-list/assets/favicon.png",
@@ -39,6 +34,7 @@ const cleanUpCaches = async () => {
 //Una vez que se instala el SW, se activa y busca los recursos para hacer que funcionen sin conexión
 self.addEventListener("activate", (e) => {
   const cacheWhiteList = [CACHE_NAME];
+  console.log("SW activate");
 
   e.waitUntil(
     caches
@@ -68,6 +64,7 @@ const fetchAssets = async (e) => {
 
 //Cuando el navegador recupera una url
 self.addEventListener("fetch", (e) => {
+  console.log("SW fetched");
   //Responder ya sea con el objeto en caché o continuar y buscar la url real
   e.respondWith(fetchAssets(e));
 });
