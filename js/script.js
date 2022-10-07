@@ -44,7 +44,7 @@ reminder();
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("../sw.js")
+    .register("/sw.js")
     .then((reg) => console.log("Succesfull SW registration!", reg))
     .catch((err) => console.warn("Registration error:" + err));
 }
