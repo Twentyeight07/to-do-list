@@ -13,17 +13,28 @@ const CACHE_NAME = "v1_cache_todo_list",
     "https://twentyeight07.github.io/to-do-list/assets/favicon.png",
   ];
 
+const preCache = async () => {
+  const cache = await caches.open(CACHE_NAME);
+  return cache.addAll(urlsToCache);
+};
+
 //Durante la fase de instalación, se almacena en caché los archivos estáticos
 self.addEventListener("install", (e) => {
-  e.waitUntil(
-    cahes
-      .open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(urlsToCache).then(() => self.skipWaiting());
-      })
-      .cath((err) => console.log(err))
-  );
+  console.log("SW installed");
+  self.skipWaiting();
+  e.waitUntil(preCache());
 });
+
+const cleanUpCaches = async () => {
+  const keys = await caches.keys();
+  const keysToDelete = keys.map((key) => {
+    if (key !== CACHE_NAME) {
+      return caches.delete(key);
+    }
+  });
+
+  return Promise.all(keysToDelete);
+};
 
 //Una vez que se instala el SW, se activa y busca los recursos para hacer que funcionen sin conexión
 self.addEventListener("activate", (e) => {
@@ -45,18 +56,18 @@ self.addEventListener("activate", (e) => {
   );
 });
 
+const fetchAssets = async (e) => {
+  try {
+    const res = await fetch(e.request);
+    return res;
+  } catch (err) {
+    const cache = await caches.open(CACHE_NAME);
+    return cache.match(e.request);
+  }
+};
+
 //Cuando el navegador recupera una url
 self.addEventListener("fetch", (e) => {
   //Responder ya sea con el objeto en caché o continuar y buscar la url real
-  e.respondWith(
-    caches.match(e.request).then((res) => {
-      if (res) {
-        //recuperamos del cache
-        return res;
-      }
-
-      //recuperar la petición de url
-      return fetch(e.request);
-    })
-  );
+  e.respondWith(fetchAssets(e));
 });

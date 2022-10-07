@@ -1,7 +1,7 @@
 # To-do List
 
 Hi there 👋🏼  
-This is a simple To-do List where you can take note of the pending tasks you have, and add (or not) a reminder to get notified when is time to do this tasks.
+This is a simple To-do List where you can take note of the pending tasks you have, and add (or not) a reminder to get notified when is time to do this tasks (only on PC at least for now...).
 
 live test: [To-do List](https://twentyeight07.github.io/to-do-list/)
 
