@@ -1,7 +1,7 @@
 //Asignar un nombre y versión al caché
 
 const CACHE_NAME = "v1_cache_todo_list",
-  urlsToCache = ["/index.html", "/style.css", "/js", "/assets/favicon.png"];
+  urlsToCache = ["./index.html", "./style.css", "./js", "./assets/favicon.png"];
 
 const preCache = async () => {
   const cache = await caches.open(CACHE_NAME);
