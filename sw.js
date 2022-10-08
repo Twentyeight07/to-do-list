@@ -5,7 +5,6 @@ const CACHE_NAME = "v1_cache_todo_list",
     "https://twentyeight07.github.io/to-do-list/index.html",
     "https://twentyeight07.github.io/to-do-list/style.css",
     "https://twentyeight07.github.io/to-do-list/js/script.js",
-    "https://twentyeight07.github.io/to-do-list/js",
     "https://twentyeight07.github.io/to-do-list/assets/favicon.png",
   ];
 
